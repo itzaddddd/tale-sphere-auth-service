@@ -22,7 +22,7 @@ import { User } from './auth/entities/user.entity';
         type: 'postgres',
         url: config.get<string>('DB_AUTH'),
         entities: [User],
-        synchronize: true,
+        synchronize: config.get<boolean>('DB_AUTH_SYNC'),
         ssl: {
           rejectUnauthorized: false
         }
